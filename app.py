@@ -17,7 +17,13 @@ def download_gif(filename):
     unsafe_allow_html=True,)
       st.write('\n')
       st.download_button('Download GIF', f, file_name=filename)
-
+      
+# Configure the app page
+st.set_page_config(
+    page_title='Pharavi',
+    page_icon='📈',
+    layout="centered",
+)
 st.title('Convert video to GIF')
 st.caption('powered by CME Marketing')
 uploaded_video = st.sidebar.file_uploader("Upload mp4 file",type=["mp4","mpeg"])
