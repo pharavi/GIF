@@ -17,7 +17,7 @@ def download_gif(filename):
     unsafe_allow_html=True,)
       st.write('\n')
       st.download_button('Download GIF', f, file_name=filename)
-      
+
 # Configure the app page
 st.set_page_config(
     page_title='Pharavi',
@@ -37,7 +37,7 @@ if uploaded_video is not None:
   st_video = open(vid,'rb')      
   clip = VideoFileClip(vid)
   clip = cut_video(clip)
-  fps = st.sidebar.number_input('Number of frames per second (fps):',max_value=20)
+  fps = st.sidebar.number_input('Number of frames per second (fps):',min_value=2,max_value=20)
   gifname = vid.replace("mp4","gif")
   clip.write_gif(gifname,fps=fps)
   st.success("Successful Conversion!")
